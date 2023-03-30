@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="top">
+    <span class="title">Pizza World</span>
+    <span class="icon"><img src="../assets/Pizza.png" /></span>
+    <span class="profile"><img src="../assets/Profile.png" /></span>
+  </div>
+  <div class="dashboard" >
+    <div class="pizza">
+      <img [src]="imagePath" class="pizza_maker" cdkDropList (cdkDropListDropped)="onDrop($event)" alt="Pizaa">
+    </div>
+    <div class="pizza-base">
+      <div class="thin-crust" (click)="addBase($event.target)">
+        <img class="thin" src="../assets/thin crust.svg" alt="Thin crust pizza">
+        <div class="thin-disc">Thin Crust Base</div>
+      </div>
+      <div class="thick-crust" (click)="addBase($event.target)">
+        <img class="thick" src="../assets/thick crust.svg" alt="Thick crust pizza">
+        <div class="thick-disc">Thick Crust Base</div>
+      </div>
+      <div class="choice">
+        Choose the base of your preferance
+      </div>
+    </div>
+    <div *ngIf="showIngredients" class="reset">
+      <button (click)="reset($event)" class="res-button">Reset</button>
+    </div>
+    <div *ngIf="showIngredients" class="ingredients">
+      <div class="choice">
+        Choose the ingredients of your preferance
+      </div>
+      <div class="bell-peper-option" >
+        <img  class="bell" src="../assets/bell-pepper.svg" alt="Bell Peper" cdkDrag>
+        <div class="bell-disc">Bell Peper</div>
+      </div>
+      <div class="olive-option" >
+        <img class="olive" src="../assets/olive.svg" alt="Olive"  cdkDrag>
+        <div class="olive-disc">Olive</div>
+      </div>
+      <div class="peperoni-option" >
+        <img class="peperoni" src="../assets/pepperoni.svg" alt="Thin crust pizza" cdkDrag>
+        <div class="peperoni-disc">Peperoni</div>
+      </div>
+    </div>
+  </div>
+</div>
